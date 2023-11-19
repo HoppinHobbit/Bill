@@ -1,0 +1,40 @@
+# Since the document is large, I'll first extract a portion of it for demonstration purposes.
+# The following Python code reads the document, extracts paragraphs, and prepares them for CSV conversion.
+
+def extract_paragraphs(text):
+    """
+    Extract paragraphs from the text. Assumes that paragraphs are separated by two or more newlines.
+    """
+    paragraphs = text.split('\n\n')
+    return [para.replace('\n', ' ').strip() for para in paragraphs if para.strip()]
+
+# Sample text from the document for demonstration
+sample_text = """
+H. R. 2617
+One Hundred Seventeenth Congress
+of the
+United States of America
+AT THE SECOND SESSION
+Begun and held at the City of Washington on Monday,
+the third day of January, two thousand and twenty-two
+An Act
+Making consolidated appropriations for the fiscal year ending September 30, 2023,
+and for providing emergency assistance for the situation in Ukraine, and for
+other purposes.
+
+SEC. 1. SHORT TITLE.
+This Act may be cited as the ‘‘Consolidated Appropriations Act, 2023’’.
+
+SEC. 2. TABLE OF CONTENTS.
+Sec. 1. Short title.
+Sec. 2. Table of contents.
+Sec. 3. References.
+Sec. 4. Explanatory statement.
+Sec. 5. Statement of appropriations.
+"""
+
+# Extract paragraphs
+paragraphs = extract_paragraphs(sample_text)
+
+# Display the first few paragraphs as a demonstration
+paragraphs[:5]  # Displaying the first five paragraphs for brevity
