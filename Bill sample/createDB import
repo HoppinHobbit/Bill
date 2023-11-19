@@ -1,0 +1,8 @@
+# Convert the extracted paragraphs into a DataFrame for CSV conversion
+df_paragraphs = pd.DataFrame(paragraphs, columns=["Paragraph"])
+
+# Export the DataFrame to a CSV file
+csv_paragraphs_path = '/mnt/data/BillDB_Paragraphs.csv'
+df_paragraphs.to_csv(csv_paragraphs_path, index=False)
+
+csv_paragraphs_path  # Output the file path for downloading or further use
